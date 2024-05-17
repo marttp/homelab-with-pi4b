@@ -19,7 +19,8 @@ docker buildx inspect --bootstrap
 
 Later, you can build image by multi-arch by this command
 ```shell
-docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 --push -t marttp/customer-api .
-docker buildx build --platform linux/arm64 --push -t marttp/customer-api .
-docker buildx build --platform linux/arm64 --push -t marttp/product-api .
+docker build --platform linux/arm64 -t marttp/customer-api .
+docker push marttp/customer-api
+docker build --platform linux/arm64 -t marttp/product-api .
+docker push marttp/product-api
 ```
