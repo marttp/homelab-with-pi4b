@@ -1,6 +1,6 @@
 use actix_web::{App, get, HttpResponse, HttpServer, Responder};
 
-#[get("/")]
+#[get("/hello")]
 async fn hello() -> impl Responder {
     HttpResponse::Ok().body("Hello from Product!")
 }
