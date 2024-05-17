@@ -36,7 +36,6 @@ spec:
   selector:
     app: product
   ports:
-    - protocol: TCP
-      port: 6000
+    - port: 6000
       targetPort: 8080
-  type: NodePort
+  type: ClusterIP

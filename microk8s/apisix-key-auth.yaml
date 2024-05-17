@@ -4,6 +4,10 @@ metadata:
   name: api
   namespace: ingress-apisix
 spec:
+#  authParameter:
+#    keyAuth:
+#      secretRef:
+#        name: homelab-api-key
   authParameter:
     keyAuth:
       value:
