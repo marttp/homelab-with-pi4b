@@ -1,0 +1,16 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: cluster-cert
+spec:
+  dnsNames:
+    - api.tpcoder.dev
+  issuerRef:
+    kind: Issuer
+    name: ca-issuer
+  secretName: example-cert
+  usages:
+    - digital signature
+    - key encipherment
+  renewBefore: 360h # 15d
+  duration: 2160h # 90d

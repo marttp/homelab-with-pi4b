@@ -1,0 +1,31 @@
+apiVersion: apisix.apache.org/v2
+kind: ApisixRoute
+metadata:
+  name: httpserver-route
+  namespace: ingress-apisix
+spec:
+  http:
+    - name: customer
+      match:
+        hosts:
+          - api.tpcoder.dev
+        paths:
+          - "/customer/*"
+      backends:
+        - serviceName: customer-service
+          servicePort: 5000
+      authentication:
+        enable: true
+        type: keyAuth
+    - name: product
+      match:
+        hosts:
+          - api.tpcoder.dev
+        paths:
+          - "/product/*"
+      backends:
+        - serviceName: product-service
+          servicePort: 6000
+      authentication:
+        enable: true
+        type: keyAuth

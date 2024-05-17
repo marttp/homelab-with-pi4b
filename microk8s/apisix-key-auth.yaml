@@ -1,0 +1,10 @@
+apiVersion: apisix.apache.org/v2
+kind: ApisixConsumer
+metadata:
+  name: api
+  namespace: ingress-apisix
+spec:
+  authParameter:
+    keyAuth:
+      value:
+        key: test-api-key
