@@ -36,6 +36,6 @@ spec:
   selector:
     app: product
   ports:
-    - port: 6000
+    - port: 8080
       targetPort: 8080
   type: ClusterIP

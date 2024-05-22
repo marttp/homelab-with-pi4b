@@ -3,23 +3,23 @@ kind: Ingress
 metadata:
   name: homelab-ingress
   annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/rewrite-target: /$2
 spec:
   ingressClassName: nginx
   rules:
     - http:
         paths:
-          - path: /customer
+          - path: /customer(/|$)(.*)
             pathType: Prefix
             backend:
               service:
                 name: customer-service
                 port:
-                  number: 5000
-          - path: /product
+                  number: 8080
+          - path: /product(/|$)(.*)
             pathType: Prefix
             backend:
               service:
                 name: product-service
                 port:
-                  number: 6000
+                  number: 8080
